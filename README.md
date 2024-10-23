@@ -1,6 +1,6 @@
 # YouTube Clone - Cloud-Based Video Platform
 
-![Project Banner](https://your-banner-image-url.png) *(You can add a banner image showing your app)*
+
 
 ## 🎥 Overview
 
