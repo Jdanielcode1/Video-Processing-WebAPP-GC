@@ -1,45 +1,72 @@
-# YouTube Clone - Cloud-Based Video Platform
+# Video Processing Platform - YouTube Clone
 
+## 🎯 Project Overview
 
+A modern video processing platform built with Google Cloud services, implementing core video sharing functionalities similar to YouTube. This project showcases a scalable, event-driven architecture using cloud-native technologies.
 
-## 🎥 Overview
+## ⚙️ System Architecture
 
-A modern, scalable video-sharing platform built with cloud-native technologies. This project replicates core YouTube functionalities using Google Cloud services, demonstrating proficiency in cloud architecture and full-stack development.
+The platform is built on a microservices architecture utilizing various Google Cloud services:
 
-## ⚡ Key Features
+### Core Components
 
-- **User Authentication** - Secure sign-in using Firebase Authentication
-- **Video Upload & Processing** - Cloud-based video processing pipeline
-- **Video Streaming** - Optimized video delivery
-- **Responsive Interface** - Modern UI built with Next.js and TypeScript
-- **Scalable Architecture** - Leveraging Google Cloud Platform services
+1. **Video Upload Flow**
+   - Users upload videos to Google Cloud Storage
+   - Upload events trigger Pub/Sub messages
+   - Cloud Run workers process videos using FFmpeg
+   - Processed videos stored back in Cloud Storage
 
-## 🛠️ Tech Stack
+2. **Authentication & Data Storage**
+   - Firebase Authentication for Google Sign-In
+   - Firestore for video metadata and user data
+   - Firebase Functions for API endpoints
+
+3. **Web Interface**
+   - Next.js frontend hosted on Cloud Run
+   - TypeScript for type safety
+   - Server-side rendering for performance
+
+## 🚀 Key Features
+
+- **User Authentication**
+  - Google account integration
+  - Secure sign-in/sign-out flow
+
+- **Video Management**
+  - Secure video upload using signed URLs
+  - Automatic video transcoding (360p, 720p)
+  - Asynchronous video processing
+
+- **Scalable Processing**
+  - Event-driven architecture using Pub/Sub
+  - Automatic scaling with Cloud Run
+  - Durable message queuing
+
+## 💻 Technology Stack
 
 ### Frontend
-- **Next.js** with TypeScript
-- **Tailwind CSS** for styling
-- **Firebase SDK** for authentication
-- **Server-Side Rendering** for optimal performance
+- Next.js with TypeScript
+- Firebase SDK
+- Google Cloud Storage integration
 
 ### Backend
-- **Express.js** REST API
-- **FFmpeg** for video processing
-- **Docker** for containerization
+- Express.js
+- FFmpeg for video processing
+- Firebase Functions
+- Docker containers
 
-### Cloud Infrastructure (Google Cloud Platform)
-- **Cloud Storage** for video storage
-- **Cloud Run** for serverless deployment
-- **Cloud Pub/Sub** for event-driven architecture
-- **Firebase** for authentication and database
+### Cloud Services
+- Google Cloud Storage
+- Cloud Pub/Sub
+- Cloud Run
+- Firebase Authentication
+- Firestore
+- Firebase Functions
 
-## 🏗️ Architecture
+## 🔧 Setup & Installation
 
-```mermaid
-graph LR
-    A[Client] --> B[Next.js Frontend]
-    B --> C[Express API]
-    C --> D[Cloud Storage]
-    C --> E[Pub/Sub]
-    E --> F[Video Processing]
-    F --> D
+1. **Prerequisites**
+   ```bash
+   # Install Node.js and npm
+   # Install Docker
+   # Setup Google Cloud account
